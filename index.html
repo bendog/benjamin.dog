@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>benjamin.dog</title>
+  <!-- Mustard UI -->
   <link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
   <style>
     header,
@@ -34,10 +35,70 @@
     section {
       background-color: aliceblue
     }
+
+    nav {
+      background-color: rgb(0, 29, 38);
+      color: aliceblue;
+    }
+
+    nav a {
+      color: aliceblue;
+    }
+
+    .mobile-menu {
+      /* display: none; */
+      position: absolute;
+      top: 50px;
+      right: 30px;
+      z-index: 10;
+    }
+
+    .menu li a {
+      color: rgb(0, 29, 38);
+    }
+
+    .mobile-menu-toggle::before {
+      background-color: aliceblue;
+      box-shadow: 0 8px 0 0 aliceblue, 0 16px 0 0 aliceblue;
+    }
+
   </style>
+  <script type="text/javascript">
+    function toggleHamburger() {
+      var x = document.getElementById("mobile-menu");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+  </script>
 </head>
 
 <body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">benjamin.dog</div>
+      <ul class="nav-links">
+        <li><a href="https://gist.github.com/bendog/8a5b56c1b4efb7a3f0656a5410efe8b1#file-ben-fitzhardinge-resume-md"
+          target="_blank">Resume</a></li>
+        <li><a href="https://github.com/bendog" target="_blank">GitHub</a></li>
+        <li><a href="https://dev.to/bendog" target="_blank">Dev blog</a></li>
+      </ul>
+      <a class="mobile-menu-toggle" onclick="toggleHamburger()"></a>
+      <ul id="mobile-menu" class="mobile-menu menu" style="display: none;">
+        <li><a href="https://gist.github.com/bendog/8a5b56c1b4efb7a3f0656a5410efe8b1#file-ben-fitzhardinge-resume-md"
+          target="_blank">Resume</a></li>
+        <li><a href="https://github.com/bendog" target="_blank">GitHub</a></li>
+        <li><a href="https://dev.to/bendog" target="_blank">Dev blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
   <header>
     <h1 class="title">benjamin.dog</h1>
     <h2 class="subtitle">Code by Ben Fitzhardinge</h2>
